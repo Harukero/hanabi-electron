@@ -1,0 +1,44 @@
+body {
+    header {
+        background-color: darkgray;
+        h1 {
+            color: darkcyan;
+            display: inline-block;
+        }
+        button {
+            display: inline-block;
+            .left {
+                left: 10%;
+            }
+            .right {
+                right: 10%;
+            }
+        }
+    }
+}
+
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    button {
+        background-color: white;
+        color: red;
+    }
+}
+
+.left-sidenav {
+    .sidenav;
+    left: 0;
+}
+
+.right-sidenav {
+    .sidenav;
+    right: 0;
+}

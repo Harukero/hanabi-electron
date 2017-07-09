@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet/css" type="text/css" href="css/material.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet/less" type="text/css" href="less/index.less" />
+    <script src="./js/jquery.js" type="text/javascript"></script>
+    <script src="./js/material.min.js" type="text/javascript"></script>
+    <script src="./js/less.min.js" type="text/javascript"></script>
+    <script src="./js/index.js" type="text/javascript"></script>
+
+    <title>Hanabi!</title>
+</head>
+
+<body>
+    <header>
+        <button onclick="openNav('leftSideNav')" class="left">Click Me to open left side</button>
+        <h1>Hanabi!</h1>
+        <button onclick="openNav('rightSideNav')" class="right">Click Me to open right side</button>
+    </header>
+    <div>
+        This is the first time ever you will find hanabi on electron.<br> Enjoy!
+    </div>
+
+    <nav id="leftSideNav" class="left-sidenav">
+        <button onclick="closeNav('leftSideNav')" id="closeNavButton">Close Button</button>
+        <label>Coucou</label>
+        <label>Salut !</label>
+        <label>ça va ?</label>
+    </nav>
+
+    <nav id="rightSideNav" class="right-sidenav">
+        <button onclick="closeNav('rightSideNav')" id="closeNavButton">Close Button</button>
+        <label>Coucou</label>
+        <label>Salut !</label>
+        <label>ça va ?</label>
+    </nav>
+
+    <div id="content"></div>
+    <div>
+        <span id="status">Connecting...</span>
+        <input type="text" id="input" disabled="disabled" />
+    </div>
+    <script src="./js/jquery.js" type="text/javascript"></script>
+    <script src="./js/frontend.js" type="text/javascript"></script>
+
+</body>
+
+
+<script>
+    // You can also require other files to run in this process
+    require('./js/renderer.js')
+</script>
+
+
+</html>

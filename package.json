@@ -1,0 +1,22 @@
+{
+    "name": "hanabi-electron",
+    "version": "1.0.0",
+    "description": "hanabi, on electron",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "repository": "https://github.com/harukero/hanabi-electron",
+    "keywords": [
+        "Electron",
+        "hanabi"
+    ],
+    "author": "Harukero",
+    "devDependencies": {
+        "electron": "~1.6.2"
+    },
+    "dependencies": {
+        "material-design-icons": "^3.0.1",
+        "websocket": "^1.0.24"
+    }
+}
