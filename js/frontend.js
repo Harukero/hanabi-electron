@@ -1,3 +1,6 @@
+import $ from "jquery";
+
+
 $(function() {
     "use strict";
 
@@ -58,7 +61,7 @@ $(function() {
         // first response from the server with user's color
         if (json.type === 'color') {
             myColor = json.data;
-            status.text(myName + ': ').css('color', myColor);
+            status.text(myName + ': ').css('background-color', myColor).css('font-size', '14px');
             input.removeAttr('disabled').focus();
             // from now user can start sending messages
         } else if (json.type === 'history') { // entire message history
@@ -117,11 +120,12 @@ $(function() {
      * Add message to the chat window
      */
     function addMessage(author, message, color, dt) {
-        content.prepend('<p><span style="color:' + color + '">' +
+        content.prepend('<li class="list-group-item"><span class="label" style="background-color:' + color + '; font-size: 16px;">' +
             author + '</span> @ ' + (dt.getHours() < 10 ? '0' +
                 dt.getHours() : dt.getHours()) + ':' +
             (dt.getMinutes() < 10 ?
                 '0' + dt.getMinutes() : dt.getMinutes()) +
-            ': ' + message + '</p>');
+            ': ' + message + '</li>');
+        input.focus();
     }
 });

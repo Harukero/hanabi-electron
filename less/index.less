@@ -1,8 +1,17 @@
+@hanabi-primary: darken(#428bca, 6.5%); // #337ab7
+@hanabi-success: #5cb85c;
+@hanabi-info:    #5bc0de;
+@hanabi-warning: #f0ad4e;
+@hanabi-danger:  #d9534f;
+@hanabi-default:  #777;
+
 body {
+    background-color: @hanabi-primary;
+    height: 100%;
     header {
-        background-color: darkgray;
+        background-color: @hanabi-info;
         h1 {
-            color: darkcyan;
+            color: whitesmoke;
             display: inline-block;
         }
         button {
@@ -23,13 +32,14 @@ body {
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
-    background-color: #111; /* Black*/
+    display: flex;
+    background-color: lightgrey; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-    button {
-        background-color: white;
-        color: red;
+    button.btn {
+        background-color: @hanabi-danger;
+        color: white;
     }
 }
 
@@ -41,4 +51,28 @@ body {
 .right-sidenav {
     .sidenav;
     right: 0;
+    border-left: 1px solid;
+}
+
+#input-zone {
+    bottom: 0;
+    height: 10%;
+}
+
+#content {
+    top: 0px;
+    overflow-y: scroll;
+    height: 85%;
+    max-height: 85%;
+}
+
+.chat-line {
+    margin: 5px;
+    border-bottom: 1px solid brown;
+}
+
+#status {
+    background-color: @hanabi-default;
+    font-size: 14px;
+    display: block;
 }

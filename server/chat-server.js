@@ -27,8 +27,25 @@ function htmlEntities(str) {
         .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+function pushMessageToAll(message, author, color) {
+    var obj = {
+        time: (new Date()).getTime(),
+        text: htmlEntities(message),
+        author: author,
+        color: color
+    };
+    history.push(obj);
+    history = history.slice(-100);
+
+    // broadcast message to all connected clients
+    var json = JSON.stringify({ type: 'message', data: obj });
+    for (var i = 0; i < clients.length; i++) {
+        clients[i].sendUTF(json);
+    }
+}
+
 // Array with some colors
-var colors = ['red', 'green', 'blue', 'magenta', 'purple', 'plum', 'orange'];
+var colors = ['#337ab7', '#5cb85c', '#5bc0de', '#f0ad4e', '#d9534f'];
 // ... in random order
 colors.sort(function(a, b) { return Math.random() > 0.5; });
 
@@ -91,26 +108,14 @@ wsServer.on('request', function(request) {
                     JSON.stringify({ type: 'color', data: userColor }));
                 console.log((new Date()) + ' User is known as: ' + userName +
                     ' with ' + userColor + ' color.');
+                pushMessageToAll("User " + userName + " connected.", "admin", "#777")
 
             } else { // log and broadcast the message
                 console.log((new Date()) + ' Received Message from ' +
                     userName + ': ' + message.utf8Data);
 
                 // we want to keep history of all sent messages
-                var obj = {
-                    time: (new Date()).getTime(),
-                    text: htmlEntities(message.utf8Data),
-                    author: userName,
-                    color: userColor
-                };
-                history.push(obj);
-                history = history.slice(-100);
-
-                // broadcast message to all connected clients
-                var json = JSON.stringify({ type: 'message', data: obj });
-                for (var i = 0; i < clients.length; i++) {
-                    clients[i].sendUTF(json);
-                }
+                pushMessageToAll(message.utf8Data, userName, userColor)
             }
         }
     });
@@ -124,20 +129,7 @@ wsServer.on('request', function(request) {
             clients.splice(index, 1);
             // push back user's color to be reused by another user
             colors.push(userColor);
-            var obj = {
-                time: (new Date()).getTime(),
-                text: htmlEntities("User " + userName + " disconnected."),
-                author: "admin",
-                color: userColor
-            };
-            history.push(obj);
-            history = history.slice(-100);
-
-            // broadcast message to all connected clients
-            var json = JSON.stringify({ type: 'message', data: obj });
-            for (var i = 0; i < clients.length; i++) {
-                clients[i].sendUTF(json);
-            }
+            pushMessageToAll("User " + userName + " disconnected.", "admin", "#777")
         }
     });
 });

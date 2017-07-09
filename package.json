@@ -1,22 +1,32 @@
 {
-    "name": "hanabi-electron",
-    "version": "1.0.0",
-    "description": "hanabi, on electron",
-    "main": "main.js",
-    "scripts": {
-        "start": "electron ."
-    },
-    "repository": "https://github.com/harukero/hanabi-electron",
-    "keywords": [
-        "Electron",
-        "hanabi"
-    ],
-    "author": "Harukero",
-    "devDependencies": {
-        "electron": "~1.6.2"
-    },
-    "dependencies": {
-        "material-design-icons": "^3.0.1",
-        "websocket": "^1.0.24"
-    }
+  "name": "hanabi-electron",
+  "version": "1.0.0",
+  "description": "hanabi, on electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/harukero/hanabi-electron",
+  "keywords": [
+    "Electron",
+    "hanabi"
+  ],
+  "author": "Harukero",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-preset-env": "^1.6.0",
+    "electron": "~1.6.2",
+    "less": "^2.7.2"
+  },
+  "dependencies": {
+    "babel-standalone": "^6.25.0",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "normalize.css": "^7.0.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "websocket": "^1.0.24"
+  }
 }
