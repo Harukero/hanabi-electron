@@ -18,21 +18,156 @@
 </head>
 
 <body>
-    <header>
-        <button onclick="openOrCloseNav('leftSideNav')" class="left btn">Click Me to open left side</button>
+    <header class="nav">
+        <!--button onclick="openOrCloseNav('leftSideNav')" class="left btn">Click Me to open left side</button-->
         <h1>Hanabi!</h1>
         <button onclick="openOrCloseNav('rightSideNav')" class="right btn">Click Me to open right side</button>
     </header>
     <div>
-        This is the first time ever you will find hanabi on electron.<br> Enjoy!
+        <h2>This is the first time ever you will find hanabi on electron.<br> <b>Enjoy!</b></h2>
     </div>
 
-    <nav id="leftSideNav" class="left-sidenav">
-    </nav>
+    <!--nav id="leftSideNav" class="left-sidenav">
+    </nav-->
 
     <nav id="rightSideNav" class="right-sidenav">
-
     </nav>
+
+    <div id="app"/>
+
+    <div class="row" id="blue-cards">
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/b-1.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/b-2.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/b-3.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/b-4.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/b-5.png" class="thumbnail"/>
+        </div>
+    </div>
+
+    <div class="row" id="green-cards">
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/g-1.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/g-2.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/g-3.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/g-4.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/g-5.png" class="thumbnail"/>
+        </div>
+    </div>
+
+    <div class="row" id="red-cards">
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/r-1.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/r-2.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/r-3.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/r-4.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/r-5.png" class="thumbnail"/>
+        </div>
+    </div>
+
+    <div class="row" id="white-cards">
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/w-1.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/w-2.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/w-3.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/w-4.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/w-5.png" class="thumbnail"/>
+        </div>
+    </div>
+
+    <div class="row" id="yellow-cards">
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/y-1.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/y-2.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/y-3.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/y-4.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/y-5.png" class="thumbnail"/>
+        </div>
+    </div>
+    <div class="row" id="colors">
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/black.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/blue.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/green.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/red.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/white.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/yellow.png" class="thumbnail"/>
+        </div>
+    </div>
+
+    <div class="row" id="others">
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/color.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/discard.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/heart.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/info.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/number.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/play.png" class="thumbnail"/>
+        </div>
+        <div class="col-xs-6 col-md-1">
+            <input type="image" src="./img/logo.png" class="thumbnail"/>
+        </div>
+    </div>
 
     <!--script src="./js/jquery.js" type="text/javascript"></script-->
 

@@ -15,6 +15,7 @@ function closeNav(_id) {
     document.getElementById(_id).style.width = "0";
 }
 
+/*
 function CloseButton(props) {
   return (
     <button onClick={props.onClick} className={props.className}>
@@ -43,8 +44,7 @@ class SideNav extends React.Component {
     );
   }
 }
-
-ReactDOM.render(<SideNav id="leftSideNav"/>, document.getElementById("leftSideNav"));
+*/
 
 const element = (
         <nav>
